@@ -1,4 +1,4 @@
-# curama-front
+# curama-client
 
 ## Project setup
 ```
