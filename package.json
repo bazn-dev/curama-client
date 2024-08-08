@@ -5,15 +5,18 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore --fix src"
   },
   "dependencies": {
-    "bootstrap": "^5.3.3",
+    "@vue/eslint-config-prettier": "^9.0.0",
     "core-js": "^3.8.3",
+    "dotenv": "^16.4.5",
     "lodash": "^4.17.21",
     "moment": "^2.30.1",
     "node-sass": "^9.0.0",
+    "prettier": "^3.3.3",
     "sass-loader": "^14.2.1",
+    "socket.io-client": "^4.7.5",
     "vee-validate": "^4.13.1",
     "vue": "^3.2.13",
     "vue-router": "^4.3.3",
@@ -27,7 +30,8 @@
     "@vue/cli-plugin-eslint": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
     "eslint": "^7.32.0",
-    "eslint-plugin-vue": "^8.0.3"
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-vue": "^8.7.1"
   },
   "eslintConfig": {
     "root": true,

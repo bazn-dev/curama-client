@@ -1,0 +1,112 @@
+div,
+p,
+span,
+b,
+strong,
+i,
+em,
+mark,
+small,
+del,
+ins,
+sub,
+sup {
+  font-size: 14px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  letter-spacing: 1px;
+  line-height: 1 !important;
+}
+
+input,
+textarea {
+  background: transparent !important;
+  border-radius: 0 !important;
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  border-bottom: 1px solid var(--c-text);
+  color: var(--c-text) !important;
+
+  &:focus {
+    color: var(--c-text) !important;
+  }
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: var(--c-text-blackout) !important;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: var(--c-text-blackout) !important;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: var(--c-text-blackout) !important;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: var(--c-text-blackout) !important;
+}
+
+.bg-dark {
+  background-color: var(--c-background) !important;
+}
+
+.bg-transparent {
+  background-color: transparent !important;
+}
+
+.text-white {
+  color: var(--c-text);
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.card {
+  border: none !important;
+}
+
+.card-body {
+  padding-left: 0 !important;
+}
+
+// List
+.list-group-item {
+  background: transparent !important;
+  color: var(--c-text) !important;
+
+  &.active {
+    font-weight: bold !important;
+  }
+}
+
+
+// Button
+.btn {
+  font-size: 14px !important;
+  color: var(--c-text-blackout) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  transition: color 0.3s ease-out !important;
+
+  &:hover {
+    color: var(--c-text) !important;
+  }
+}
+
+.btn-icon {
+  color: var(--c-text-blackout);
+  cursor: pointer;
+  transition: color 0.3s ease-out;
+
+
+  &:hover {
+    color: var(--c-text);
+  }
+}

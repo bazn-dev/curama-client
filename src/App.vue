@@ -1,33 +1,20 @@
 <template>
-  <div class="app">
+  <main-layout>
     <router-view v-slot="{ Component }">
       <transition name="fade" mode="out-in">
         <component :is="Component" />
       </transition>
     </router-view>
-  </div>
+    <div class="background"></div>
+  </main-layout>
 </template>
 
-<script>
-export default {
-  name: 'App'
-}
+<script setup>
+import MainLayout from "@/layouts/index";
 </script>
 
-<style>
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.5s ease;
-}
-
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
-}
-
-.app {
-  width: 100%;
-  height: 100%;
-  background-color: #333333;
-}
+<style lang="scss">
+@import "assets/styles/global.scss";
+@import "assets/styles/variables.scss";
+@import "assets/styles/overrides.scss";
 </style>
