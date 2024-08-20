@@ -29,6 +29,26 @@ export function asyncEmit(eventName, data) {
 
 export function createSocketPlugin() {
   return (store) => {
+    socket.on("modules/get", (data) => {
+      // console.log(data);
+      store.dispatch("adminModules/setModules", data.data);
+    });
+
+    socket.on("modules/add", () => {
+      // console.log(data);
+      // store.dispatch("adminClasses/setClasses", data.data);
+    });
+
+    socket.on("modules/edit", () => {
+      // console.log(data);
+      // store.dispatch("adminClasses/setClasses", data.data);
+    });
+
+    socket.on("modules/delete", () => {
+      // console.log(data);
+      // store.dispatch("adminClasses/setClasses", data.data);
+    });
+
     socket.on("classes/get", (data) => {
       // console.log(data);
       store.dispatch("adminClasses/setClasses", data.data);
@@ -46,6 +66,26 @@ export function createSocketPlugin() {
     });
 
     socket.on("classes/delete", () => {
+      // console.log(data);
+      // store.dispatch("adminClasses/setClasses", data.data);
+    });
+
+    socket.on("skills/get", (data) => {
+      // console.log(data);
+      store.dispatch("adminSkills/setSkills", data.data);
+    });
+
+    socket.on("skills/add", () => {
+      // console.log(data);
+      // store.dispatch("adminClasses/setClasses", data.data);
+    });
+
+    socket.on("skills/edit", () => {
+      // console.log(data);
+      // store.dispatch("adminClasses/setClasses", data.data);
+    });
+
+    socket.on("skills/delete", () => {
       // console.log(data);
       // store.dispatch("adminClasses/setClasses", data.data);
     });

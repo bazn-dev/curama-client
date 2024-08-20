@@ -6,6 +6,12 @@ export default [
     route: "admin",
   },
   {
+    name: "modules",
+    icon: "apps",
+    title: "Modules",
+    route: "admin-modules",
+  },
+  {
     name: "classes",
     icon: "data_table",
     title: "Classes",

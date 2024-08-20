@@ -1,5 +1,5 @@
 <template>
-  <div v-if="data" class="classes-view-read">
+  <div v-if="data" class="modules-view-read">
     <div class="d-flex justify-content-between">
       <h3>{{ data.title }}</h3>
       <div class="d-flex">
@@ -13,21 +13,6 @@
     </div>
     <div>{{ data.name }}</div>
     <p>{{ data.description }}</p>
-
-    <table class="table table-borderless">
-      <thead>
-        <tr>
-          <th scope="col">Parameter</th>
-          <th scope="col">Type</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="key in Object.keys(data.model)" :key="`key-${key}`">
-          <td>{{ key }}</td>
-          <td>{{ data.model[key] }}</td>
-        </tr>
-      </tbody>
-    </table>
   </div>
 </template>
 

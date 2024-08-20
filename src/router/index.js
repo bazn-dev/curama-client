@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import { loadLayoutMiddleware } from "./middleware/loadLayoutMiddleware";
 import index from "../pages/index";
 import adminDashboard from "../pages/admin/dashboard";
+import adminModules from "../pages/admin/modules";
 import adminClasses from "../pages/admin/classes";
 import adminSkills from "../pages/admin/skills";
 import crypton from "../pages/crypton/index";
@@ -22,6 +23,14 @@ const routes = [
     name: "admin",
     path: "/admin",
     component: adminDashboard,
+    meta: {
+      layout: "admin",
+    },
+  },
+  {
+    name: "admin-modules",
+    path: "/admin/modules",
+    component: adminModules,
     meta: {
       layout: "admin",
     },

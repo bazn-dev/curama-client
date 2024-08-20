@@ -1,3 +1,4 @@
+// Text
 div,
 p,
 span,
@@ -24,8 +25,17 @@ h6 {
   line-height: 1 !important;
 }
 
+label {
+  font-size: 10px;
+  color: var(--c-text-blackout) !important;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+// Fields
 input,
 textarea {
+  padding: .375rem .2rem !important;
   background: transparent !important;
   border-radius: 0 !important;
   border-top: none !important;
@@ -68,6 +78,7 @@ textarea {
   cursor: pointer;
 }
 
+// Cards
 .card {
   border: none !important;
 }
@@ -80,6 +91,7 @@ textarea {
 .list-group-item {
   background: transparent !important;
   color: var(--c-text) !important;
+  border-color: var(--c-text-blackout) !important;
 
   &.active {
     font-weight: bold !important;
@@ -109,4 +121,16 @@ textarea {
   &:hover {
     color: var(--c-text);
   }
+}
+
+// Table
+.table>:not(caption)>*>* {
+  background-color: transparent !important;
+  color: var(--c-text) !important;
+}
+
+.table thead th {
+  color: var(--c-text-blackout) !important;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }

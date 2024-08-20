@@ -1,5 +1,5 @@
 <template>
-  <div class="classes-view-edit">
+  <div class="modules-view-edit">
     <div class="d-flex justify-content-between">
       <h3>{{ titleForm }}</h3>
       <div class="d-flex">

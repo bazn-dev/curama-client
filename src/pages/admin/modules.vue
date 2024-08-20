@@ -1,9 +1,9 @@
 <template>
-  <div class="admin-skills">
-    <h2 class="mb-5">Skills</h2>
+  <div class="admin-modules">
+    <h2 class="mb-5">Modules</h2>
     <div class="row">
       <div class="col-10">
-        <skills-view-edit
+        <modules-view-edit
           v-if="displayEditForm"
           :type="typeEditForm"
           :data="active"
@@ -11,7 +11,7 @@
           @edit="editItem"
           @close="hideEditForm"
         />
-        <skills-view-read
+        <modules-view-read
           v-else
           :data="active"
           @edit="showEditForm"
@@ -19,8 +19,8 @@
         />
       </div>
       <div class="col-2">
-        <skills-list
-          :list="skills"
+        <modules-list
+          :list="modules"
           :active="active"
           @setActive="setActive"
           @add="showAddForm"
@@ -34,15 +34,15 @@
 import { ref, computed, onBeforeMount, watch } from "vue";
 import { useStore } from "vuex";
 import {
-  getSkills as getSkillsApi,
-  addSkill as addSkillApi,
-  editSkill as editSkillApi,
-  deleteSkill as deleteSkillApi,
+  getModules as getModulesApi,
+  addModule as addModuleApi,
+  editModule as editModuleApi,
+  deleteModule as deleteModuleApi,
 } from "@/services/admin";
 
-import SkillsList from "@/components/admin/skills/SkillsList";
-import SkillsViewRead from "@/components/admin/skills/SkillsViewRead";
-import SkillsViewEdit from "@/components/admin/skills/SkillsViewEdit";
+import ModulesList from "@/components/admin/modules/ModulesList";
+import ModulesViewRead from "@/components/admin/modules/ModulesViewRead";
+import ModulesViewEdit from "@/components/admin/modules/ModulesViewEdit";
 
 const store = useStore();
 
@@ -50,17 +50,16 @@ const active = ref();
 const typeEditForm = ref("");
 const displayEditForm = ref(false);
 
-const skills = computed(() => store.getters["adminSkills/skills"]);
+const modules = computed(() => store.getters["adminModules/modules"]);
 
-watch(skills, () => {
-  if (skills.value.length) {
-    console.log(skills.value);
-    active.value = skills.value[0];
+watch(modules, () => {
+  if (modules.value.length) {
+    active.value = modules.value[0];
   }
 });
 
 onBeforeMount(async () => {
-  await getSkillsApi();
+  await getModulesApi();
 });
 
 const setActive = (data) => {
@@ -83,21 +82,21 @@ const hideEditForm = () => {
 };
 
 const addItem = async (data) => {
-  await addSkillApi(data);
-  await getSkillsApi();
+  await addModuleApi(data);
+  await getModulesApi();
   hideEditForm();
 };
 
 const editItem = async (data) => {
-  const res = await editSkillApi(data);
+  const res = await editModuleApi(data);
   console.log(res);
-  await getSkillsApi();
+  await getModulesApi();
   hideEditForm();
 };
 
 const deleteItem = async (id) => {
-  await deleteSkillApi(id);
-  await getSkillsApi();
+  await deleteModuleApi(id);
+  await getModulesApi();
 };
 </script>
 
